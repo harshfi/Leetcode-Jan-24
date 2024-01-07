@@ -21,7 +21,7 @@ class Solution {
         List<Integer> list = new ArrayList<>();
         int count=Integer.MIN_VALUE;
         for (Map.Entry<Integer,Integer> entry : map.entrySet()){
-            System.out.println(entry.getKey()+" "+entry.getKey());
+            // System.out.println(entry.getKey()+" "+entry.getKey());
           if(entry.getValue()==count){
               list.add(entry.getKey());
           }
