@@ -21,7 +21,7 @@ class Solution {
         List<Integer> list = new ArrayList<>();
         int count=Integer.MIN_VALUE;
         for (Map.Entry<Integer,Integer> entry : map.entrySet()){
-            // System.out.println(entry.getKey()+" "+entry.getKey());
+            
           if(entry.getValue()==count){
               list.add(entry.getKey());
           }
@@ -47,12 +47,8 @@ class Solution {
         int right=makeSum(root.right,sum);
 
         sum=sum+left+right+root.val;
-        if(map.containsKey(sum)){
-            map.put(sum,map.get(sum)+1);
-        }
-        else{
-            map.put(sum,1);
-        }
+          int count=map.getOrDefault(sum,0);
+          map.put(sum,count+1);
         return sum;
     }
 
