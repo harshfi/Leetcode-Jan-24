@@ -8,32 +8,26 @@
  * }
  */
 class Solution {
-    TreeNode found=null;
     public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
-        
-         found=null;
-        find(root,p,q);
-        return found;
+        if(root==null) return null;
 
-        
-    }
-    public boolean find(TreeNode root, TreeNode p, TreeNode q){
-        if (root==null) return false;
-
-        if(p==root||q==root){
-            boolean left=  find(root.left,p,q);
-            boolean right=  find(root.right,p,q);
-           if(left || right) {
-               found=root;
-               return true;
-           }
-           else return true;
+        if(root==p || root==q)
+        {
+            return root;
         }
-        boolean left=  find(root.left,p,q);
-        boolean right=  find(root.right,p,q);
-        if(left==true && right==true && found==null) found=root;
-
-        return left|| right;
-
+        TreeNode left=lowestCommonAncestor(root.left, p,q); 
+        TreeNode right=lowestCommonAncestor(root.right, p,q); 
+         if(left!=null && right!=null)
+         {
+             return root;
+         }
+         if(left!=null)
+         {
+             return left;
+         }
+         else{
+            return right;
+         }
+        
     }
 }
