@@ -55,11 +55,11 @@ class Solution {
 
                 }
                
-                System.out.print(p.node.val+" "+p.pos+"          ");
+                // System.out.print(p.node.val+" "+p.pos+"          ");
 
             }
             
-            System.out.println();
+            // System.out.println();
             Cmax= Math.max(Cmax,Math.abs(max-min)+1);
         }
         return Cmax;
